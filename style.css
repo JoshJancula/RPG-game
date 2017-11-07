@@ -1,20 +1,33 @@
 
+
 body {
 	background: url("images/kombat.jpeg");
 	background-size: 100%;
 }
 
+h3 {
+	color: red;
+	font-size: 50px;
+	text-align: center;
+}
+
+p {
+	color: blue;
+	font-size: 35px;
+	text-align: center;
+}
+
 #char1, #char1a {
 	background-image: url("images/char1.jpeg");
 	height: 300px;
-	width: 250px;
+	width: 200px;
 	background-size: 100%;
 }
 
 #char2, #char2a {
 	background-image: url("images/char2.jpeg");
 	height: 300px;
-	width: 250px;
+	width: 200px;
 	background-size: cover;
 
 }
@@ -22,13 +35,13 @@ body {
 #char3, #char3a {
 	background-image: url("images/char3.jpeg");
 	height: 300px;
-	width: 250px;
+	width: 200px;
 	background-size: cover;
 }
 
 #char4, #char4a {
 	background-image: url("images/char4.jpeg");
 	height: 300px;
-	width: 250px;
+	width: 200px;
 	background-size: cover;
 }

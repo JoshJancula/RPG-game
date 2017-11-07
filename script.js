@@ -97,18 +97,42 @@ $(".attack").hide();
 
 // Attack button
 
+  
   $(".attack").on("click", function() {
        opponentHealth = opponentHealth - yourPower;
        yourHealth = yourHealth - opponentPower;
        $("#opponentHealth").text(opponentHealth);
        $("#yourHealth").text(yourHealth);
-       if (yourHealth <= 0) {
-       	alert("GAME OVER YOU LOSE");
-       } 
+        // if you win
        if (opponentHealth <= 0) {
-       	alert("YOU WIN THIS ROUND");
+        alert("CHOOSE YOUR NEXT CONTENDOR!");
+        yourHealth = yourHealth + 30;
+        yourPower = yourPower + 5;
+        opponentHealth = 0;
+        $(".enemies").show();
+        $("#opponentHealth").text(opponentHealth);
+        $("#yourHealth").text(yourHealth);
+        $(".attack").hide();
+
        }
-        
+        // if you lose
+       if (yourHealth <= 0) {
+       	alert("GAME OVER YOU LOSE!");
+         $(".enemies").hide();
+          $(".character").show();
+          $(".attack").hide();
+          opponentHealth = 0;
+          yourHealth = 0;
+          $("#opponentHealth").text(opponentHealth);
+          $("#yourHealth").text(yourHealth);
+          $(".attack").hide();
+
+
+
+
+       } 
+
+       
    
 });
 
