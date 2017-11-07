@@ -1,0 +1,34 @@
+
+body {
+	background: url("images/kombat.jpeg");
+	background-size: 100%;
+}
+
+#char1, #char1a {
+	background-image: url("images/char1.jpeg");
+	height: 300px;
+	width: 250px;
+	background-size: 100%;
+}
+
+#char2, #char2a {
+	background-image: url("images/char2.jpeg");
+	height: 300px;
+	width: 250px;
+	background-size: cover;
+
+}
+
+#char3, #char3a {
+	background-image: url("images/char3.jpeg");
+	height: 300px;
+	width: 250px;
+	background-size: cover;
+}
+
+#char4, #char4a {
+	background-image: url("images/char4.jpeg");
+	height: 300px;
+	width: 250px;
+	background-size: cover;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Mortal Kombat Spoof</title>
+
+	<!-- Added link to the jQuery Library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Added a link to Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+
+	
+	
+</head>
+<body>
+	
+
+
+	
+
+
+
+	<!-- characters -->
+	<div class="container">
+
+		<!-- select your character -->
+		<div class="row" id="selectCharacter">
+			<div class="col-md-3">
+				<button id="char1" class="btn btn-primary character"  value="1"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="char2" class="btn btn-primary character" value="2"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="char3" class="btn btn-primary character" value="3"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="char4" class="btn btn-primary character" value="4"></button>
+			</div>
+		</div>
+		<div class="row">
+		</div>
+
+
+		<!-- Enemies -->
+
+		<div class="row">
+			<div class="col-md-3">
+				<button id="char1a" class="btn btn-primary enemies"  value="1"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="char2a" class="btn btn-primary enemies" value="2"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="char3a" class="btn btn-primary enemies" value="3"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="char4a" class="btn btn-primary enemies" value="4"></button>
+			</div>
+		</div>
+		<!-- scoreboard to meter health-->
+		<div class="row">
+			<div class="col-md-3">
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Your Health</h3>
+					</div>
+
+					<div class="panel-body">
+						<h1 id="yourHealth"></h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Opponent Health</h3>
+					</div>
+
+					<div class="panel-body">
+						<h1 id="opponentHealth"></h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+			</div>
+		</div>
+		<!-- Attack button -->
+
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<!-- put button in middle of row -->
+			<div class="col-md-4">
+				<div class="col-md-3">
+					<button id="Attack" class="btn btn-primary attack">Attack</button>
+				</div>
+
+				<div class="col-md-4">
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+	
+
+
+	<script type="text/javascript" src="script.js"></script>
+<!-- <script type="text/javascript" src="play.js"></script>
+-->
+
+
+</body>
+</html>
