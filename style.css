@@ -1,8 +1,20 @@
+html {
+	height: 100%;
+}
 
+.start {
+	text-align: center;
+	font-size: 100px;
+	font-weight: bolder;
+	color: red;
+}
 
 body {
 	background: url("images/kombat.jpeg");
-	background-size: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100%;
 }
 
 h3 {
@@ -19,29 +31,43 @@ p {
 
 #char1, #char1a {
 	background-image: url("images/char1.jpeg");
-	height: 300px;
-	width: 200px;
+	height: 150px;
+	width: 90px;
 	background-size: 100%;
 }
 
 #char2, #char2a {
 	background-image: url("images/char2.jpeg");
-	height: 300px;
-	width: 200px;
+	height: 150px;
+	width: 90px;
 	background-size: cover;
 
 }
 
 #char3, #char3a {
 	background-image: url("images/char3.jpeg");
-	height: 300px;
-	width: 200px;
+	height: 150px;
+	width: 90px;
 	background-size: cover;
 }
 
 #char4, #char4a {
 	background-image: url("images/char4.jpeg");
-	height: 300px;
-	width: 200px;
+	height: 150px;
+	width: 90px;
+	background-size: cover;
+}
+
+#char5, #char5a {
+	background-image: url("images/char5.jpeg");
+	height: 150px;
+	width: 90px;
+	background-size: cover;
+}
+
+#char6, #char6a {
+	background-image: url("images/char6.jpeg");
+	height: 150px;
+	width: 90px;
 	background-size: cover;
 }

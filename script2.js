@@ -1,51 +1,26 @@
-
-
 // wait for document to load
  $(document).ready(function() {
 
 // create characters as variables
 var char1 = {
-	power: function() {
-    return Math.floor(Math.random()*5)+8;
-  },
+	power: 6,
 	health: 100
 };
 
 var char2 = {
-	power: function() {
-    return Math.floor(Math.random()*7)+7;
-  },
+	power: 8,
 	health: 90
 };
 
 var char3 = {
-	power: function() {
-    return Math.floor(Math.random()*8)+5;
-  },
+	power: 9,
 	health: 85
 };
 
 var char4 = {
-	power: function() {
-    return Math.floor(Math.random()*7)+10;
-  },
+	power: 10,
 	health: 80
 };
-
-var char5 = {
-  power: function() {
-    return Math.floor(Math.random()*9)+5;
-  },
-  health: 85
-};
-
-var char6 = {
-  power: function() {
-    return Math.floor(Math.random()*8)+6;
-  },
-  health: 85
-};
-
 
  var yourHealth;
  var opponentHealth;
@@ -53,7 +28,6 @@ var char6 = {
  var yourPower = 0;
  var opponentCharacter = 0;
  var opponentPower = 0;
- 
 
  
 
@@ -87,16 +61,6 @@ $(".attack").hide();
         	yourHealth = char4.health;
         	yourPower = char4.power;
         }
-        else if (yourCharacter == 5) {
-          $("#char5a").hide();
-          yourHealth = char5.health;
-          yourPower = char5.power;
-        }
-        else if (yourCharacter == 6) {
-          $("#char6a").hide();
-          yourHealth = char6.health;
-          yourPower = char6.power;
-        }
 
   
 });
@@ -124,42 +88,31 @@ $(".attack").hide();
         	opponentHealth = char4.health;
         	opponentPower = char4.power;
         }
-        else if (opponentCharacter == 5) {
-          opponentHealth = char5.health;
-          opponentPower = char5.power;
-        }
-        else if (opponentCharacter == 6) {
-          opponentHealth = char6.health;
-          opponentPower = char6.power;
-        }
         
    
 });
 
 
 // Attack button
-var newYourPower=0;
+
   
   $(".attack").on("click", function() {
-       opponentHealth = opponentHealth - (yourPower()+newYourPower);
-       yourHealth = yourHealth - opponentPower();
+       opponentHealth = opponentHealth - yourPower;
+       yourHealth = yourHealth - opponentPower;
        $("#opponentHealth").text(opponentHealth);
        $("#yourHealth").text(yourHealth);
-         
-         // if you win
+        // if you win
        if (opponentHealth <= 0) {
         alert("CHOOSE YOUR NEXT CONTENDOR!");
-        yourHealth = yourHealth + 50;
-        newYourPower += 5;
-       opponentHealth = 0;
+        yourHealth = yourHealth + 30;
+        yourPower = yourPower + 5;
+        opponentHealth = 0;
         $(".enemies").show();
         $("#opponentHealth").text(opponentHealth);
         $("#yourHealth").text(yourHealth);
         $(".attack").hide();
 
-        
        }
-
         // if you lose
        if (yourHealth <= 0) {
        	alert("GAME OVER YOU LOSE!");
@@ -172,12 +125,18 @@ var newYourPower=0;
           $("#yourHealth").text(yourHealth);
           $(".attack").hide();
 
+
+
+
        } 
 
+       
+   
+});
 
 
 
-  });
 
- });
+
+});
    
