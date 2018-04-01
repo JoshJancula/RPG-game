@@ -2,12 +2,6 @@ html {
 	height: 100%;
 }
 
-.start {
-	text-align: center;
-	font-size: 100px;
-	font-weight: bolder;
-	color: red;
-}
 
 body {
 	background: url("images/kombat.jpeg");
@@ -19,55 +13,24 @@ body {
 
 h3 {
 	color: red;
-	font-size: 50px;
+	font-size: 30px;
 	text-align: center;
+	padding: 30px;
 }
 
 p {
-	color: blue;
-	font-size: 35px;
-	text-align: center;
+	color: black;
+	font-size: 20px;
+	/*text-align: center;*/
+	padding: 20px;
 }
 
-#char1, #char1a {
-	background-image: url("images/char1.jpeg");
-	height: 150px;
-	width: 90px;
-	background-size: 100%;
-}
 
-#char2, #char2a {
-	background-image: url("images/char2.jpeg");
-	height: 150px;
-	width: 90px;
-	background-size: cover;
 
-}
 
-#char3, #char3a {
-	background-image: url("images/char3.jpeg");
+.character, .enemy {
 	height: 150px;
 	width: 90px;
 	background-size: cover;
 }
 
-#char4, #char4a {
-	background-image: url("images/char4.jpeg");
-	height: 150px;
-	width: 90px;
-	background-size: cover;
-}
-
-#char5, #char5a {
-	background-image: url("images/char5.jpeg");
-	height: 150px;
-	width: 90px;
-	background-size: cover;
-}
-
-#char6, #char6a {
-	background-image: url("images/char6.jpeg");
-	height: 150px;
-	width: 90px;
-	background-size: cover;
-}

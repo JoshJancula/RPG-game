@@ -30,25 +30,8 @@
 	<div class="container">
 		<div class="col-md-9">
 			<!-- select your character -->
-			<div class="row">
-				<div class="col-md-2">
-					<button id="char1" class="btn btn-primary character"  value="1"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char2" class="btn btn-primary character" value="2"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char3" class="btn btn-primary character" value="3"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char4" class="btn btn-primary character" value="4"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char5" class="btn btn-primary character" value="5"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char6" class="btn btn-primary character" value="6"></button>
-				</div>
+			<div class="row" id="charactersArea">
+				
 			</div>
 			<div class="row">
 			</div>
@@ -77,31 +60,31 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-1">
-		</div>
+		
 		<!-- scoreboard to meter health-->
-		<div class="col-md-2">
-			<div class="row">
-				<h3>Your Health</h3>
+		<div class="col-md-3" id="scoreArea">
+			<div class="row" id=yourStats>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+				<h4 id="round"></h4>
+				</div>
+				<div class="panel-content">
 				<p id="yourHealth"></p>
-				<h3>Opponent Health</h3>
+				<p id="damageTaken"></p>
 				<p id="opponentHealth"></p>
-
+				<p id="damageDone"></p>
+				<!-- Attack button -->
+				<button id="Attack" class="btn btn-primary attack">Attack</button>
 			</div>
-			<!-- Attack button -->
+			</div>
+		</div>
+			
 			<div class="row">
-				<div class="col-md-4">
-				</div>
-				<!-- put button in middle of row -->
-				<div class="col-md-4">
-					<div class="col-md-3">
-						<button id="Attack" class="btn btn-primary attack">Attack</button>
-					</div>
-
-					<div class="col-md-4">
-					</div>
-				</div>
+				
 			</div>
+			</div>
+			
+			
 		</div>
 		
 
