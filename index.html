@@ -6,9 +6,10 @@
 
 	<!-- Added link to the jQuery Library -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+     
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-	<!-- Added a link to Bootstrap-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
 
 	
@@ -27,54 +28,58 @@
 
 
 	<!-- characters -->
-	<div class="container">
-		<div class="col-md-9">
+	<div class="row center">
+		<div class="col l8 s12 center">
 			<!-- select your character -->
-			<div class="row" id="charactersArea">
-				
-			</div>
+			
 			<div class="row">
+				<div id="charactersArea"></div>
+				<div id="enemyArea"></div>
+				</div>
+				<div class="row" id="battleView">
+					<!--<div class="col l1"></div>-->
+				<div class="col l3 s12" id="yourCharacter">
 			</div>
-
+				<div class="col l2 s12">
+					<h2 id="vs" class="white-text">VS</h2>
+				</div>
+					<div class="col l3 s12" id="enemyCharacter"></div>
+					</div>
+					<div class="row center">
+							<!-- Attack button -->
+				<button id="Attack" class="btn attack">Attack</button>
+					</div>
+					<div class="col l1"></div>
+			<div class="row">
+			<div id="enemyCharacter"></div>
+			</div>
+			</div>
 
 			<!-- Enemies -->
 
-			<div class="row">
-				<div class="col-md-2">
-					<button id="char1a" class="btn btn-primary enemies"  value="1"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char2a" class="btn btn-primary enemies" value="2"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char3a" class="btn btn-primary enemies" value="3"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char4a" class="btn btn-primary enemies" value="4"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char5a" class="btn btn-primary enemies" value="5"></button>
-				</div>
-				<div class="col-md-2">
-					<button id="char6a" class="btn btn-primary enemies" value="6"></button>
-				</div>
-			</div>
-		</div>
+		
 		
 		<!-- scoreboard to meter health-->
-		<div class="col-md-3" id="scoreArea">
+		<div class="col l3 s8 push-s2 center" id="scoreArea">
+			<div class="row" id="instructions">
+			
+			</div>
 			<div class="row" id=yourStats>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-				<h4 id="round"></h4>
+				<div class="card red darken-1">
+					<div class="card-heading">
+				<h4 class="blue-text" id="round"></h4>
 				</div>
-				<div class="panel-content">
+				<div class="card-content orange-text">
+					<h3 id="selectCharacter">Can You Survive All 5 Rounds?<br>
+					Select Your Player To Begin!</h3>
+				<h3 id="selectOpponent">Select Your First Comptetitor</h3>
+				<h3 id="nextRound">Choose Your Next Contendor!</h3>
+				<div id="stats">
 				<p id="yourHealth"></p>
 				<p id="damageTaken"></p>
 				<p id="opponentHealth"></p>
 				<p id="damageDone"></p>
-				<!-- Attack button -->
-				<button id="Attack" class="btn btn-primary attack">Attack</button>
+			</div>
 			</div>
 			</div>
 		</div>
@@ -83,18 +88,41 @@
 				
 			</div>
 			</div>
+			<div class="col l1"></div>
 			
 			
 		</div>
 		
-
-
-	</div>
-
-
+ <!-- you lose modal -->
+  <div id="youLose" class="modal">
+    <div class="modal-content">
+      <h2>GAME OVER!</h2>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" id="resetGame" class="modal-action modal-close waves-effect waves-green btn-flat">Play Again?</a>
+    </div>
+  </div>
+  
+  
+   <!-- you win modal -->
+  <div id="youWin" class="modal">
+    <div class="modal-content">
+      <h2>YOU WENT ALL 5 ROUNDS!!!!!!!!</h2>
+      <H3>YOU ARE THE CHAMPION!!!!!!!!!</H3>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" id="resetGame" class="modal-action modal-close waves-effect waves-green btn-flat">Play Again?</a>
+    </div>
+  </div>
+ 
 
 	
-
+<script>
+	$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+</script>
 
 	<script type="text/javascript" src="script.js"></script>
 <!-- <script type="text/javascript" src="play.js"></script>

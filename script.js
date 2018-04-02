@@ -1,261 +1,317 @@
-
-
 // wait for document to load
- $(document).ready(function() {
+$(document).ready(function() {
 
 
-var characters = [
+  var characters = [
 
- {
-  name: char1,
-	power: function() {
-    return Math.floor(Math.random()*5)+8;
-  },
-	health: 100,
-  defense: 2,
-  played: false,
-  image: "/images/char1.jpeg"
+    {
+      name: "char1",
+      power: function() {
+        return Math.floor(Math.random() * 5) + 8;
+      },
+      health: 100,
+      defense: 4,
+      played: false,
+      image: "images/char1.jpeg"
 
-},
-{
-  name: char2,
-	power: function() {
-    return Math.floor(Math.random()*7)+7;
-  },
-	health: 90,
-  defense: 4,
-  played: false,
-  image: "/images/char2.jpeg"
+    },
+    {
+      name: "char2",
+      power: function() {
+        return Math.floor(Math.random() * 7) + 7;
+      },
+      health: 90,
+      defense: 2,
+      played: false,
+      image: "images/char2.jpeg"
 
-},
-{
-  name: char3,
-	power: function() {
-    return Math.floor(Math.random()*8)+5;
-  },
-	health: 85,
-  defense: 5,
-  played: false,
-  image: "/images/char3.jpeg"
+    },
+    {
+      name: "char3",
+      power: function() {
+        return Math.floor(Math.random() * 8) + 5;
+      },
+      health: 85,
+      defense: 5,
+      played: false,
+      image: "images/char3.jpeg"
 
-},
-{
-  name: char4,
-	power: function() {
-    return Math.floor(Math.random()*7)+10;
-  },
-	health: 80,
-  defense: 6,
-  played: false,
-  image: "/images/char4.jpeg"
+    },
+    {
+      name: "char4",
+      power: function() {
+        return Math.floor(Math.random() * 7) + 9;
+      },
+      health: 80,
+      defense: 4,
+      played: false,
+      image: "images/char4.jpeg"
 
-},
-{
-  name: char5,
-  power: function() {
-    return Math.floor(Math.random()*9)+3;
-  },
-  health: 85,
-  defense: 5,
-  played: false,
-  image: "/images/char5.jpeg"
+    },
+    {
+      name: "char5",
+      power: function() {
+        return Math.floor(Math.random() * 9) + 3;
+      },
+      health: 85,
+      defense: 5,
+      played: false,
+      image: "images/char5.jpeg"
 
 
-},
-{
-  name: char6,
-  power: function() {
-    return Math.floor(Math.random()*8)+6;
-  },
-  health: 85,
-  defense: 5,
-  played: false,
-  image: "/images/char1.jpeg"
+    },
+    {
+      name: "char6",
+      power: function() {
+        return Math.floor(Math.random() * 8) + 6;
+      },
+      health: 85,
+      defense: 5,
+      played: false,
+      image: "images/char6.jpeg"
 
-},
-];
+    },
+  ];
 
- var yourHealth;
- var opponentHealth;
- var yourCharacter = 0;
- var yourPower = 0;
- var opponentCharacter = 0;
- var opponentPower = 0;
- var roundNumber = 1;
- 
+  var yourHealth;
+  var opponentHealth;
+  var opponentDefense;
+  var yourCharacter = 0;
+  var yourPower = 0;
+  var opponentCharacter = 0;
+  var opponentPower = 0;
+  var roundNumber = 1;
+  var yourDefense;
 
+
+  // get your initial character
   function getCharacters() {
-for(var i = 0; i < characters.length; i++) {
-  if (characters[i].played == true) {
-    // hide the character
-    console.log("already played")
+    for (var i = 0; i < characters.length; i++) {
+      if (characters[i].played == false) {
+        // show it
+        var panel = $("<div class='item character'>").append(
+          "<img id=" + characters[i].name + " class='character'  value='" + [i] + "' src='" + characters[i].image + "'>");
+
+      }
+      $("#charactersArea").append(panel);
+    }
   }
-  else {
-    // show it
-   var div = $("<div>").append(
-    "<button id=" + characters[i].name + " class='btn btn-primary character'  value='" + [i] + "''><img src=" + characters[i].image + "'</button>" );
-    $("#charactersArea").append(div);
+
+
+  function getEnemies() {
+    for (var i = 0; i < characters.length; i++) {
+      if (characters[i].played == false) {
+
+        // show it
+        var panel2 = $("<div class='item enemies'>").append(
+          "<img id='" + characters[i].name + "' class='enemies'  value='" + [i] + "'img src='" + characters[i].image + "'>");
+
+      }
+      $("#enemyArea").append(panel2);
+    }
   }
-}
-}
- getCharacters()
-$("#scoreArea").hide();
-$(".enemies").hide();
-$(".attack").hide();
-
-// Pick your character
-
-   $(".character").on("click", function() {
-   		yourCharacter = this.value;
-        $(".character").hide();
-        $(this).show();
-        $(".enemies").show();
-        if (yourCharacter == 1) {
-        	$("#char1a").hide();
-        	yourHealth = char1.health;
-        	yourPower = char1.power;
-          yourDefense = charl.defense;
-          char1.played = true;
-        } 
-        else if (yourCharacter == 2) {
-        	$("#char2a").hide();
-        	yourHealth = char2.health;
-        	yourPower = char2.power;
-          yourDefense = char2.defense;
-          char2.played = true;
-        }
-       else if (yourCharacter == 3) {
-        	$("#char3a").hide();
-        	yourHealth = char3.health;
-        	yourPower = char3.power;
-          yourDefense = char3.defense;
-          char3.played = true;
-        }
-       else if (yourCharacter == 4) {
-        	$("#char4a").hide();
-        	yourHealth = char4.health;
-        	yourPower = char4.power;
-          yourDefense = char4.defense;
-          char4.played = true;
-        }
-        else if (yourCharacter == 5) {
-          $("#char5a").hide();
-          yourHealth = char5.health;
-          yourPower = char5.power;
-          yourDefense = char6.defense;
-          char5.played = true;
-        }
-        else if (yourCharacter == 6) {
-          $("#char6a").hide();
-          yourHealth = char6.health;
-          yourPower = char6.power;
-          yourDefense = char6.defense;
-          char6.played = true;
-        }
-
-  
-});
-
-// Pick your first opponent
-
- $(".enemies").on("click", function() {
-        $(".enemies").hide();
-        $(this).show();
-        opponentCharacter = this.value;
-        $(".attack").show();
-         $("#round").text("Round " + roundNumber)
-        $("#scoreArea").show();
-        if (opponentCharacter == 1) {
-        	opponentHealth = char1.health;
-        	opponentPower = char1.power;
-          opponentDefense = charl.defense;
-        } 
-        else if (opponentCharacter == 2) {
-        	opponentHealth = char2.health;
-        	opponentPower = char2.power;
-          opponentDefense = char2.defense;
-        }
-       else if (opponentCharacter == 3) {
-        	opponentHealth = char3.health;
-        	opponentPower = char3.power;
-           opponentDefense = char3.defense;
-        }
-       else if (opponentCharacter == 4) {
-        	opponentHealth = char4.health;
-        	opponentPower = char4.power;
-          opponentDefense = char4.defense;
-        }
-        else if (opponentCharacter == 5) {
-          opponentHealth = char5.health;
-          opponentPower = char5.power;
-          opponentDefense = char5.defense;
-        }
-        else if (opponentCharacter == 6) {
-          opponentHealth = char6.health;
-          opponentPower = char6.power;
-          opponentDefense = char6.defense;
-        }
-        
-   
-});
 
 
-// Attack button
-var newYourPower = 0;
-var newYourDefense = 0;
-  
+  getCharacters()
+  $("#battleView").hide();
+  $("#selectOpponent").hide();
+  // $("#yourStats").hide();
+  $(".attack").hide();
+  $("#vs").hide();
+  $("#stats").hide()
+  $("#nextRound").hide()
+
+  // Pick your character
+
+  $(document).on("click", ".character", function() {
+
+    yourCharacter = $(this).attr("value");
+    $("#selectCharacter").hide();
+    $("#selectOpponent").show();
+
+
+    if (yourCharacter == 0) {
+      $("#yourCharacter").html("<img src='images/char1.jpeg'>");
+      yourHealth = characters[0].health;
+      yourPower = characters[0].power;
+      yourDefense = characters[0].defense;
+      characters[0].played = true;
+    }
+    else if (yourCharacter == 1) {
+      $("#yourCharacter").html("<img src='images/char2.jpeg'>");
+      yourHealth = characters[1].health;
+      yourPower = characters[1].power;
+      yourDefense = characters[1].defense;
+      characters[1].played = true;
+    }
+    else if (yourCharacter == 2) {
+      $("#yourCharacter").html("<img src='images/char3.jpeg'>");
+      yourHealth = characters[2].health;
+      yourPower = characters[2].power;
+      yourDefense = characters[2].defense;
+      characters[2].played = true;
+    }
+    else if (yourCharacter == 3) {
+      $("#yourCharacter").html("<img src='images/char4.jpeg'>");
+      yourHealth = characters[3].health;
+      yourPower = characters[3].power;
+      yourDefense = characters[3].defense;
+      characters[3].played = true;
+    }
+    else if (yourCharacter == 4) {
+      $("#yourCharacter").html("<img src='images/char5.jpeg'>");
+      yourHealth = characters[4].health;
+      yourPower = characters[4].power;
+      yourDefense = characters[4].defense;
+      characters[4].played = true;
+    }
+    else if (yourCharacter == 5) {
+      $("#yourCharacter").html("<img src='images/char6.jpeg'>");
+      yourHealth = characters[5].health;
+      yourPower = characters[5].power;
+      yourDefense = characters[5].defense;
+      characters[5].played = true;
+    }
+
+    $(".character").hide();
+    // get enemies to pick from
+    getEnemies();
+
+
+  });
+
+  // Pick your first opponent
+
+  $(document).on("click", ".enemies", function() {
+    $(".enemies").hide();
+    // $(this).show();
+    $("#selectOpponent").hide();
+    $("#nextRound").hide()
+    $("#battleView").show();
+
+    $("#vs").show();
+    opponentCharacter = $(this).attr("value");
+    $(".attack").show();
+    $("#round").text("Round " + roundNumber)
+    $("#yourStats").show();
+    if (opponentCharacter == 0) {
+      $("#enemyCharacter").html("<img src='images/char1.jpeg'>");
+      opponentHealth = characters[0].health;
+      opponentPower = characters[0].power;
+      opponentDefense = characters[0].defense;
+      characters[0].played = true;
+    }
+    else if (opponentCharacter == 1) {
+      $("#enemyCharacter").html("<img src='images/char2.jpeg'>");
+      opponentHealth = characters[1].health;
+      opponentPower = characters[1].power;
+      opponentDefense = characters[1].defense;
+      characters[1].played = true;
+    }
+    else if (opponentCharacter == 2) {
+      $("#enemyCharacter").html("<img src='images/char3.jpeg'>");
+      opponentHealth = characters[2].health;
+      opponentPower = characters[2].power;
+      opponentDefense = characters[2].defense;
+      characters[2].played = true;
+    }
+    else if (opponentCharacter == 3) {
+      $("#enemyCharacter").html("<img src='images/char4.jpeg'>");
+      opponentHealth = characters[3].health;
+      opponentPower = characters[3].power;
+      opponentDefense = characters[3].defense;
+      characters[3].played = true;
+    }
+    else if (opponentCharacter == 4) {
+      $("#enemyCharacter").html("<img src='images/char5.jpeg'>");
+      opponentHealth = characters[4].health;
+      opponentPower = characters[4].power;
+      opponentDefense = characters[4].defense;
+      characters[4].played = true;
+    }
+    else if (opponentCharacter == 5) {
+      $("#enemyCharacter").html("<img src='images/char6.jpeg'>");
+      opponentHealth = characters[5].health;
+      opponentPower = characters[5].power;
+      opponentDefense = characters[5].defense;
+      characters[5].played = true;
+    }
+
+
+  });
+
+
+  // Attack button
+  var newYourPower = 0;
+  var newYourDefense = 0;
+  var damageDone;
+  var damageTaken;
+
   $(".attack").on("click", function() {
-       opponentHealth = opponentHealth - (yourPower()+newYourPower);
-       yourHealth = yourHealth - opponentPower();
-       $("#round").text("Round " + roundNumber)
-       $("#opponentHealth").text("Opponent Health: " + opponentHealth);
-       $("#yourHealth").text("Your Health: " + yourHealth);
-       $("#damageTaken").text("You took " + opponentPower() + " damage");
-       $("#damageDone").text("You dealt " + (yourPower()+newYourPower) + " damage");
-         // if you win
-       if (opponentHealth <= 0) {
-        roundNumber += 1;
-        alert("CHOOSE YOUR NEXT CONTENDOR!");
-        yourHealth = yourHealth + 60;
-        newYourPower += 1;
-        opponentHealth = 0;
-        damageDone = 0;
-        damageTaken = 0;
-        // $(".enemies").show();
-        getCharacters()
-        $("#opponentHealth").text(opponentHealth);
-        $("#yourHealth").text(yourHealth);
-        $("damageTaken").text("");
-        $("damageDone").text("");
-        $(".attack").hide();
+    $("#stats").show();
+   
+    // this calculates how much damage you took
+    
+    opponentHealth = ((opponentHealth + opponentDefense) - (yourPower() + newYourPower));
+    yourHealth = ((yourHealth + yourDefense) - opponentPower());
+    $("#round").text("Round " + roundNumber);
+    $("#opponentHealth").text("Opponent Health: " + opponentHealth);
+    $("#yourHealth").text("Your Health: " + yourHealth);
+    $("#damageTaken").text("You took " + opponentPower() + " damage");
+    $("#damageDone").text("You dealt " + (yourPower() + newYourPower) + " damage");
+    // if you win
+    if (opponentHealth <= 0) {
+       
+      roundNumber += 1;
+      if (roundNumber > 5) {
         $("#scoreArea").hide();
+         $('#youWin').modal('open');
+          setTimeout(function() {
+        location.reload(); //return to normal
+      }, 3500)
+    }
+      $("#battleView").hide();
+      $("#Attack").hide();
+      // set up the next round
+      yourHealth = yourHealth + 50;
+      newYourPower += 1;
+      opponentHealth = 0;
+      damageDone = 0;
+      damageTaken = 0;
+      // show remaining enemies
+      getEnemies()
+      $("#opponentHealth").text(opponentHealth)
 
+      $("#round").text("Round " + roundNumber);
+      $("#yourHealth").text("Your Health: " + yourHealth);
+      $("#stats").hide();
+      $("#nextRound").show();
+      $("damageTaken").text("");
+      $("damageDone").text("");
 
-       }
+    }
 
-        // if you lose
-       if (yourHealth <= 0) {
-       	alert("GAME OVER YOU LOSE!");
-         $(".enemies").hide();
-          $(".character").show();
-          $(".attack").hide();
-          opponentHealth = 0;
-          yourHealth = 0;
-          damageTaken = 0;
-          damageDone = 0;
-          $("#opponentHealth").text(opponentHealth);
-          $("#yourHealth").text(yourHealth);
-          $("damageTaken").text(damageTaken);
-        $("damageDone").text(damageDone);
-          $(".attack").hide();
-          $("#scoreArea").hide();
+    // if you lose
+    if (yourHealth <= 0) {
+      // alert("GAME OVER YOU LOSE!");
+      $('#youLose').modal('open');
+      //refresh the page
+      setTimeout(function() {
+        location.reload(); //return to normal
+      }, 3500)
 
-       } 
+    }
 
 
 
 
   });
 
- });
-   
+
+  $("#resetGame").on("click", function() {
+    location.reload();
+  });
+
+
+
+});

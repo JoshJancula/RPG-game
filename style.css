@@ -12,25 +12,91 @@ body {
 }
 
 h3 {
-	color: red;
-	font-size: 30px;
+	color: black;
+	font-weight: bolder;
 	text-align: center;
-	padding: 30px;
+
 }
 
 p {
-	color: black;
+	color: orange;
 	font-size: 20px;
 	/*text-align: center;*/
 	padding: 20px;
 }
 
+/*#instructions {*/
+/*	margin-left: -10%;*/
+/*}*/
 
-
-
-.character, .enemy {
-	height: 150px;
-	width: 90px;
-	background-size: cover;
+.card {
+	opacity: .8;
+	border-radius: 30px;
 }
 
+.character, .enemies{
+	margin: 2%;
+	display: inline-block;
+	height: 150px;
+	width: 200px;
+	/*background-size: cover;*/
+}
+
+.item {
+	margin: 3%;
+	display: inline-block;
+	height: 150px;
+	width: 200px;
+	/*background-size: cover;*/
+}
+
+#yourCharacter, #enemyCharacter {
+	margin-left: 10%;
+	height: 180px;
+	width: 100px;
+}
+
+#vs {
+	margin-left: 80%;
+}
+
+
+
+
+
+
+/*  this is for tablets */
+/*@media screen and (max-width: 980px) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2){*/
+
+/*}*/
+
+
+
+
+
+/*  this is for phones */
+@media screen and (max-width: 600px) and (min-width: 250px) and (-webkit-min-device-pixel-ratio: 2){
+	
+	.character, .enemies{
+	margin: 2%;
+	display: inline-block;
+	height: 350px;
+	width: 200px;
+	/*background-size: cover;*/
+}
+
+.item {
+	margin: 3%;
+	display: inline-block;
+	height: 350px;
+	width: 200px;
+	/*background-size: cover;*/
+}
+
+#yourCharacter, #enemyCharacter {
+	margin-left: 10%;
+	height: 300px;
+	width: 100px;
+}
+	
+}
