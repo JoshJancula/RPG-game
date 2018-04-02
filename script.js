@@ -10,7 +10,7 @@ $(document).ready(function() {
         return Math.floor(Math.random() * 5) + 8;
       },
       health: 100,
-      defense: 1,
+      defense: 4,
       played: false,
       image: "images/char1.jpeg"
 
@@ -18,10 +18,10 @@ $(document).ready(function() {
     {
       name: "char2",
       power: function() {
-        return Math.floor(Math.random() * 7) + 7;
+        return Math.floor(Math.random() * 7) + 8;
       },
-      health: 90,
-      defense: 2,
+      health: 100,
+      defense: 3,
       played: false,
       image: "images/char2.jpeg"
 
@@ -29,10 +29,10 @@ $(document).ready(function() {
     {
       name: "char3",
       power: function() {
-        return Math.floor(Math.random() * 8) + 5;
+        return Math.floor(Math.random() * 8) + 8;
       },
-      health: 85,
-      defense: 3,
+      health: 100,
+      defense: 2,
       played: false,
       image: "images/char3.jpeg"
 
@@ -40,10 +40,10 @@ $(document).ready(function() {
     {
       name: "char4",
       power: function() {
-        return Math.floor(Math.random() * 7) + 9;
+        return Math.floor(Math.random() * 7) + 8;
       },
-      health: 80,
-      defense: 4,
+      health: 100,
+      defense: 3,
       played: false,
       image: "images/char4.jpeg"
 
@@ -51,10 +51,10 @@ $(document).ready(function() {
     {
       name: "char5",
       power: function() {
-        return Math.floor(Math.random() * 9) + 3;
+        return Math.floor(Math.random() * 9) + 8;
       },
-      health: 85,
-      defense: 3,
+      health: 100,
+      defense: 1,
       played: false,
       image: "images/char5.jpeg"
 
@@ -63,10 +63,10 @@ $(document).ready(function() {
     {
       name: "char6",
       power: function() {
-        return Math.floor(Math.random() * 8) + 6;
+        return Math.floor(Math.random() * 8) + 8;
       },
-      health: 85,
-      defense: 3,
+      health: 100,
+      defense: 2,
       played: false,
       image: "images/char6.jpeg"
 
@@ -83,6 +83,7 @@ $(document).ready(function() {
   var roundNumber = 1;
   var yourDefense;
   var newYourPower = 0;
+
 
 
   // get your initial character
@@ -175,9 +176,7 @@ $(document).ready(function() {
     $("#charactersArea").hide();
     // get enemies to pick from
     getEnemies();
-    console.log("why does it go twice?")
-
-
+   
   });
 
   // Pick your first opponent
@@ -273,7 +272,13 @@ $(document).ready(function() {
       $("#battleView").hide();
       $("#Attack").hide();
       // set up the next round
-      yourHealth = yourHealth + 50;
+     if (roundNumber <= 2) {
+       yourHealth += 80;
+     } else {
+       yourHealth += 50;
+     }
+     console.log(yourHealth)
+      yourDefense += 1;
       newYourPower += 1;
       opponentHealth = 0;
       // show remaining enemies
