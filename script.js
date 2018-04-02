@@ -82,15 +82,16 @@ $(document).ready(function() {
   var opponentPower = 0;
   var roundNumber = 1;
   var yourDefense;
+  var newYourPower = 0;
 
 
   // get your initial character
   function getCharacters() {
-    for (var i = 0; i < characters.length; i++) {
+    for (let i = 0; i < characters.length; i++) {
       if (characters[i].played == false) {
         // show it
-        var panel = $("<div class='item character'>").append(
-          "<img id=" + characters[i].name + " class='character'  value='" + [i] + "' src='" + characters[i].image + "'>");
+        var panel = $("<div class='item'>").append(
+          "<img id=" + characters[i].name + " class='character' value='" + [i] + "' src='" + characters[i].image + "'>");
 
       }
       $("#charactersArea").append(panel);
@@ -99,13 +100,11 @@ $(document).ready(function() {
 
 
   function getEnemies() {
-    for (var i = 0; i < characters.length; i++) {
+    for (let i = 0; i < characters.length; i++) {
       if (characters[i].played == false) {
-
         // show it
         var panel2 = $("<div class='item enemies'>").append(
           "<img id='" + characters[i].name + "' class='enemies'  value='" + [i] + "'img src='" + characters[i].image + "'>");
-
       }
       $("#enemyArea").append(panel2);
     }
@@ -173,9 +172,10 @@ $(document).ready(function() {
       characters[5].played = true;
     }
 
-    $(".character").hide();
+    $("#charactersArea").hide();
     // get enemies to pick from
     getEnemies();
+    console.log("why does it go twice?")
 
 
   });
@@ -183,8 +183,7 @@ $(document).ready(function() {
   // Pick your first opponent
 
   $(document).on("click", ".enemies", function() {
-    $(".enemies").hide();
-    // $(this).show();
+    $("#enemyArea").hide();
     $("#selectOpponent").hide();
     $("#nextRound").hide()
     $("#battleView").show();
@@ -237,57 +236,46 @@ $(document).ready(function() {
       characters[5].played = true;
     }
 
-
   });
 
 
-  // Attack button
-  var newYourPower = 0;
-  var newYourDefense = 0;
-  var damageDone;
-  var damageTaken;
-
   $(".attack").on("click", function() {
     $("#stats").show();
-   
+
     // this calculates how much damage you took
-    
-    opponentHealth = ((opponentHealth + opponentDefense) - (yourPower() + newYourPower));
-    yourHealth = ((yourHealth + yourDefense) - opponentPower());
+
+    opponentHealth = ((opponentHealth) - ((yourPower() + newYourPower) - opponentDefense));
+    yourHealth = ((yourHealth) - (opponentPower() - yourDefense));
     $("#round").text("Round " + roundNumber);
     $("#opponentHealth").text("Opponent Health: " + opponentHealth);
     $("#yourHealth").text("Your Health: " + yourHealth);
-    // $("#damageTaken").text("You took " + opponentPower() + " damage");
-    // $("#damageDone").text("You dealt " + (yourPower() + newYourPower) + " damage");
-     // if you lose
+    // if you lose
     if (yourHealth <= 0) {
-      // alert("GAME OVER YOU LOSE!");
       $('#youLose').modal('open');
       //refresh the page
       setTimeout(function() {
-        location.reload(); //return to normal
+        location.reload(); 
       }, 3500)
 
     }
     // if you win
     else if (opponentHealth <= 0) {
-       
+      $("#enemyArea").empty()
+      $("#enemyArea").show();
       roundNumber += 1;
       if (roundNumber > 5) {
         $("#scoreArea").hide();
-         $('#youWin').modal('open');
-          setTimeout(function() {
-        location.reload(); //return to normal
-      }, 3500)
-    }
+        $('#youWin').modal('open');
+        setTimeout(function() {
+          location.reload();
+        }, 3500)
+      }
       $("#battleView").hide();
       $("#Attack").hide();
       // set up the next round
-      yourHealth = yourHealth + 60;
+      yourHealth = yourHealth + 50;
       newYourPower += 1;
       opponentHealth = 0;
-      damageDone = 0;
-      damageTaken = 0;
       // show remaining enemies
       getEnemies()
       $("#opponentHealth").text(opponentHealth)
@@ -301,7 +289,7 @@ $(document).ready(function() {
 
     }
 
-   
+
 
 
 
