@@ -8,17 +8,21 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-color: black;
 	height: 100%;
 }
 
-h3 {
+ h4, h3 {
 	color: black;
 	font-weight: bolder;
 	text-align: center;
 
 }
 
+
+
 p {
+		font-weight: bolder;
 	color: orange;
 	font-size: 20px;
 	/*text-align: center;*/
@@ -60,15 +64,26 @@ p {
 	margin-left: 80%;
 }
 
+#opponentHealth {
+	margin-top: -15%;
+}
+
 
 
 
 
 
 /*  this is for tablets */
-/*@media screen and (max-width: 980px) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2){*/
+@media screen and (max-width: 980px) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2){
 
-/*}*/
+	#scoreArea {
+		margin-top: -25%;
+	}
+	
+	#opponentHealth {
+	margin-top: -5%;
+}
+}
 
 
 
@@ -77,26 +92,44 @@ p {
 /*  this is for phones */
 @media screen and (max-width: 600px) and (min-width: 250px) and (-webkit-min-device-pixel-ratio: 2){
 	
+	#scoreArea {
+		margin-top: -28%;
+	}
+	
+	#Attack {
+		margin-top: 55%;
+		margin-bottom: 2%;
+	}
+	
 	.character, .enemies{
 	margin: 2%;
 	display: inline-block;
-	height: 350px;
-	width: 200px;
+	height: 100px;
+	width: 100px;
 	/*background-size: cover;*/
 }
 
 .item {
 	margin: 3%;
 	display: inline-block;
-	height: 350px;
-	width: 200px;
+	height: 100px;
+	width: 100px;
 	/*background-size: cover;*/
 }
 
-#yourCharacter, #enemyCharacter {
-	margin-left: 10%;
-	height: 300px;
-	width: 100px;
+#yourCharacter {
+	margin-left: -3%;
+	height: 60px;
+	width: 40px;
+	opacity: .9;
 }
 	
+ #enemyCharacter {
+ 	margin-left: 12%;
+	height: 60px;
+	width: 40px;
+	opacity: .9;
+ }
+ 
+
 }

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Mortal Kombat Spoof</title>
 
 	<!-- Added link to the jQuery Library -->
@@ -17,16 +18,6 @@
 </head>
 <body>
 	
-
-	
-<div class="row" id="selectCharacters">
-	<div id="choosePlayer">
-	</div>
-	<div id="chooseOpponent">
-	</div>
-</div>
-
-
 	<!-- characters -->
 	<div class="row center">
 		<div class="col l8 s12 center">
@@ -37,17 +28,17 @@
 				<div id="enemyArea"></div>
 				</div>
 				<div class="row" id="battleView">
-					<!--<div class="col l1"></div>-->
-				<div class="col l3 s12" id="yourCharacter">
+					<div class="col l1 s0"></div>
+				<div class="col l3 s5" id="yourCharacter">
 			</div>
-				<div class="col l2 s12">
-					<h2 id="vs" class="white-text">VS</h2>
+				<div class="col l2 s2">
+					<h2 id="vs" class="white-text hide-on-small-only">VS</h2>
 				</div>
-					<div class="col l3 s12" id="enemyCharacter"></div>
+					<div class="col l3 s5" id="enemyCharacter"></div>
 					</div>
 					<div class="row center">
 							<!-- Attack button -->
-				<button id="Attack" class="btn attack">Attack</button>
+				<button id="Attack" class="btn attack blue darken-2">Attack!</button>
 					</div>
 					<div class="col l1"></div>
 			<div class="row">
@@ -60,25 +51,25 @@
 		
 		
 		<!-- scoreboard to meter health-->
-		<div class="col l3 s8 push-s2 center" id="scoreArea">
+		<div class="col l3 s10 push-s1" id="scoreArea">
 			<div class="row" id="instructions">
 			
 			</div>
 			<div class="row" id=yourStats>
 				<div class="card red darken-1">
-					<div class="card-heading">
-				<h4 class="blue-text" id="round"></h4>
-				</div>
+				
 				<div class="card-content orange-text">
-					<h3 id="selectCharacter">Can You Survive All 5 Rounds?<br>
-					Select Your Player To Begin!</h3>
-				<h3 id="selectOpponent">Select Your First Comptetitor</h3>
+					<h3 class="center"id="round"></h3>
+					<h4 id="selectCharacter">Can You Survive All 5 Rounds?<br>
+					Select Your Player To Begin!</h4>
+				<h3 id="selectOpponent">Select Your First Contendor</h3>
 				<h3 id="nextRound">Choose Your Next Contendor!</h3>
 				<div id="stats">
+					
 				<p id="yourHealth"></p>
-				<p id="damageTaken"></p>
+				<!--<p id="damageTaken"></p>-->
 				<p id="opponentHealth"></p>
-				<p id="damageDone"></p>
+				<!--<p id="damageDone"></p>-->
 			</div>
 			</div>
 			</div>
@@ -94,24 +85,24 @@
 		</div>
 		
  <!-- you lose modal -->
-  <div id="youLose" class="modal">
-    <div class="modal-content">
-      <h2>GAME OVER!</h2>
+  <div id="youLose" class="modal black">
+    <div class="modal-content center">
+      <h2 class="red-text">GAME OVER!</h2>
     </div>
-    <div class="modal-footer">
-      <a href="#!" id="resetGame" class="modal-action modal-close waves-effect waves-green btn-flat">Play Again?</a>
+    <div class="modal-footer red darken-2">
+      <a href="#!" id="resetGame" class="black-text modal-action modal-close waves-effect waves-green btn-flat">Play Again?</a>
     </div>
   </div>
   
   
    <!-- you win modal -->
-  <div id="youWin" class="modal">
-    <div class="modal-content">
-      <h2>YOU WENT ALL 5 ROUNDS!!!!!!!!</h2>
-      <H3>YOU ARE THE CHAMPION!!!!!!!!!</H3>
+  <div id="youWin" class="modal black">
+    <div class="modal-content center">
+      <h2 class="red-text">YOU WENT ALL 5 ROUNDS!!!!!!!!</h2>
+      <H3 class="red-text">YOU ARE THE CHAMPION!!!!!!!!!</H3>
     </div>
-    <div class="modal-footer">
-      <a href="#!" id="resetGame" class="modal-action modal-close waves-effect waves-green btn-flat">Play Again?</a>
+    <div class="modal-footer red darken-2">
+      <a href="#!" id="resetGame" class="black-text modal-action modal-close waves-effect waves-green btn-flat">Play Again?</a>
     </div>
   </div>
  

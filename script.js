@@ -10,7 +10,7 @@ $(document).ready(function() {
         return Math.floor(Math.random() * 5) + 8;
       },
       health: 100,
-      defense: 4,
+      defense: 1,
       played: false,
       image: "images/char1.jpeg"
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
         return Math.floor(Math.random() * 8) + 5;
       },
       health: 85,
-      defense: 5,
+      defense: 3,
       played: false,
       image: "images/char3.jpeg"
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
         return Math.floor(Math.random() * 9) + 3;
       },
       health: 85,
-      defense: 5,
+      defense: 3,
       played: false,
       image: "images/char5.jpeg"
 
@@ -66,7 +66,7 @@ $(document).ready(function() {
         return Math.floor(Math.random() * 8) + 6;
       },
       health: 85,
-      defense: 5,
+      defense: 3,
       played: false,
       image: "images/char6.jpeg"
 
@@ -257,10 +257,20 @@ $(document).ready(function() {
     $("#round").text("Round " + roundNumber);
     $("#opponentHealth").text("Opponent Health: " + opponentHealth);
     $("#yourHealth").text("Your Health: " + yourHealth);
-    $("#damageTaken").text("You took " + opponentPower() + " damage");
-    $("#damageDone").text("You dealt " + (yourPower() + newYourPower) + " damage");
+    // $("#damageTaken").text("You took " + opponentPower() + " damage");
+    // $("#damageDone").text("You dealt " + (yourPower() + newYourPower) + " damage");
+     // if you lose
+    if (yourHealth <= 0) {
+      // alert("GAME OVER YOU LOSE!");
+      $('#youLose').modal('open');
+      //refresh the page
+      setTimeout(function() {
+        location.reload(); //return to normal
+      }, 3500)
+
+    }
     // if you win
-    if (opponentHealth <= 0) {
+    else if (opponentHealth <= 0) {
        
       roundNumber += 1;
       if (roundNumber > 5) {
@@ -273,7 +283,7 @@ $(document).ready(function() {
       $("#battleView").hide();
       $("#Attack").hide();
       // set up the next round
-      yourHealth = yourHealth + 50;
+      yourHealth = yourHealth + 60;
       newYourPower += 1;
       opponentHealth = 0;
       damageDone = 0;
@@ -291,16 +301,7 @@ $(document).ready(function() {
 
     }
 
-    // if you lose
-    if (yourHealth <= 0) {
-      // alert("GAME OVER YOU LOSE!");
-      $('#youLose').modal('open');
-      //refresh the page
-      setTimeout(function() {
-        location.reload(); //return to normal
-      }, 3500)
-
-    }
+   
 
 
 
