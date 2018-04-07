@@ -33,10 +33,29 @@ p {
 /*	margin-left: -10%;*/
 /*}*/
 
+#instructions {
+	margin-top: 10%
+}
+
 .card {
 	opacity: .8;
 	border-radius: 30px;
 }
+
+#enemyCharacter {
+    position: absolute;
+    right: 600px;
+    width: 600px;
+    height: 370px;
+    /*background: blue;*/
+    -webkit-animation: slide 0.5s reverse;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.7s reverse;
+    /*animation-delay: 2s;*/
+}
+
+
+
 
 .character, .enemies, .charImage{
 	margin: 2%;
@@ -55,20 +74,21 @@ p {
 }
 
 #yourCharacter, #enemyCharacter {
-	margin-left: 10%;
 	height: 180px;
 	width: 100px;
 }
 
-#vs {
-	margin-left: 80%;
-}
+/*#vs {*/
+/*	margin-left: 80%;*/
+/*}*/
 
 #opponentHealth {
 	margin-top: -15%;
 }
 
-
+#Attack {
+	margin-bottom: 55%;
+}
 
 
 
@@ -77,7 +97,7 @@ p {
 @media screen and (max-width: 980px) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2){
 
 	#scoreArea {
-		margin-top: -25%;
+		margin-top: -15%;
 	}
 	
 	#opponentHealth {
@@ -93,11 +113,11 @@ p {
 @media screen and (max-width: 600px) and (min-width: 250px) and (-webkit-min-device-pixel-ratio: 2){
 	
 	#scoreArea {
-		margin-top: -28%;
+		margin-top: -15%;
 	}
 	
 	#Attack {
-		margin-top: 55%;
+		margin-top: -10%;
 		margin-bottom: 2%;
 	}
 	
@@ -117,19 +137,47 @@ p {
 	/*background-size: cover;*/
 }
 
+ #enemyCharacter {
+    position: absolute;
+    right: 200px;
+    width: 600px;
+    height: 370px;
+    /*background: blue;*/
+    -webkit-animation: slide 0.5s reverse;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.7s reverse;
+    /*animation-delay: 2s;*/
+}
+
 #yourCharacter {
-	margin-left: -3%;
+	margin-top: 5%;
+	margin-left: -10%;
+	margin-bottom: 50%;
 	height: 60px;
 	width: 40px;
 	opacity: .9;
 }
 	
  #enemyCharacter {
- 	margin-left: 12%;
+ 	margin-top: 5%;
+ 	margin-left: 5%;
 	height: 60px;
 	width: 40px;
 	opacity: .9;
  }
  
 
+ 
+
+}
+
+
+@-webkit-keyframes slide {
+    100% { right: 0; 
+    }
+}
+
+@keyframes slide {
+    100% { right: 0;
+    }
 }

@@ -8,6 +8,7 @@
 	<!-- Added link to the jQuery Library -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	
      
  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
@@ -29,17 +30,14 @@
 				</div>
 				<div class="row" id="battleView">
 					<div class="col l1 s0"></div>
-				<div class="col l3 s5" id="yourCharacter">
+				<div class="col l4 s5" id="yourCharacter">
 			</div>
-				<div class="col l2 s2">
-					<h2 id="vs" class="white-text hide-on-small-only">VS</h2>
+				<div class="col l1 s2">
+					<!--<h2 id="vs" class="white-text hide-on-small-only">VS</h2>-->
 				</div>
-					<div class="col l3 s5" id="enemyCharacter"></div>
+					<div class="col l4 s5 left" id="enemyCharacter"></div>
 					</div>
-					<div class="row center">
-							<!-- Attack button -->
-				<button id="Attack" class="btn attack blue darken-2">Attack!</button>
-					</div>
+				
 					<div class="col l1"></div>
 			<div class="row">
 			<div id="enemyCharacter"></div>
@@ -73,6 +71,10 @@
 			</div>
 			</div>
 		</div>
+			<div class="row center">
+							<!-- Attack button -->
+				<button id="Attack" class="btn attack blue darken-2">Attack!</button>
+					</div>
 			
 			<div class="row">
 				
@@ -117,7 +119,6 @@
 	<script type="text/javascript" src="script.js"></script>
 <!-- <script type="text/javascript" src="play.js"></script>
 -->
-
 
 </body>
 </html>
